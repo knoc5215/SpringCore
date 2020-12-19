@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+    1. XML 기반의 Bean 주입
+    - 일일이 XML에 기입해줘야 해서 매우 번거롭다.
+
+    <bean id="bookService" class="me.jumen.demospring51.applicationContext.BookService"
+          scope="singleton" autowire="default">
+        <property name="bookRepository" ref="bookRepository"/>
+
+    </bean>
+    <bean id="bookRepository" class="me.jumen.demospring51.applicationContext.BookRepository"/>
+    -->
+
+    <!--
+    2. component-scan
+    - XML 방식의 번거로움을 해소하기 위해 등장
+    - base-package를 기준으로 bean을 scanning해서 등록을 하겠다
+    - @Component : bean으로 등록한다
+    -->
+    <context:component-scan base-package="me.jumen.demospring51.applicationContext"/>
+</beans>
