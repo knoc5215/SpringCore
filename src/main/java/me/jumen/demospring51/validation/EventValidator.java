@@ -4,6 +4,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+// 고전적 방식
 public class EventValidator implements Validator {
 
     @Override
